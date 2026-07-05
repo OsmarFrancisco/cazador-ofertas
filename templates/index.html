@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cazador de Ofertas Huancayo</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f1f5f9;
+}
+
+
+header{
+    background:#111827;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+
+.producto{
+
+    background:white;
+    max-width:900px;
+    margin:20px auto;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px #0002;
+
+    display:flex;
+    gap:20px;
+
+}
+
+
+
+.producto img{
+
+    width:180px;
+    height:180px;
+    object-fit:contain;
+    background:#eee;
+    border-radius:10px;
+
+}
+
+
+
+.info{
+
+    flex:1;
+
+}
+
+
+
+.nivel{
+
+    font-size:18px;
+    font-weight:bold;
+
+}
+
+
+.titulo{
+
+    font-size:20px;
+    font-weight:bold;
+    margin:10px 0;
+
+}
+
+
+
+.precio{
+
+    color:#dc2626;
+    font-size:25px;
+    font-weight:bold;
+
+}
+
+
+
+.btn{
+
+    display:inline-block;
+    margin-top:15px;
+    background:#2563eb;
+    color:white;
+    padding:12px 18px;
+    border-radius:10px;
+    text-decoration:none;
+
+}
+
+
+
+@media(max-width:700px){
+
+.producto{
+
+flex-direction:column;
+
+}
+
+.producto img{
+
+width:100%;
+
+}
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<header>
+
+<h1>🔥 Cazador de Ofertas Huancayo</h1>
+
+<p>Detectando oportunidades reales para comprar barato</p>
+
+</header>
+
+<div style="max-width:900px;margin:20px auto;">
+    <input 
+        id="buscador"
+        type="text"
+        placeholder="🔍 Buscar productos..."
+        style="
+            width:100%;
+            padding:15px;
+            border-radius:10px;
+            border:1px solid #ccc;
+            font-size:16px;
+        "
+    >
+</div>
+
+<div style="max-width:900px;margin:20px auto;display:flex;gap:10px;flex-wrap:wrap;">
+
+<button onclick="filtrar('TODOS')" style="padding:10px 15px;border:none;border-radius:8px;background:#111827;color:white;">
+TODOS
+</button>
+
+<button onclick="filtrar('GANGA')" style="padding:10px 15px;border:none;border-radius:8px;background:#22c55e;color:white;">
+💎 Gangas
+</button>
+
+<button onclick="filtrar('BUENA')" style="padding:10px 15px;border:none;border-radius:8px;background:#f59e0b;color:white;">
+🔥 Buenas
+</button>
+
+<button onclick="filtrar('BAJANDO')" style="padding:10px 15px;border:none;border-radius:8px;background:#3b82f6;color:white;">
+📉 Bajando
+</button>
+
+</div>
+
+<div style="max-width:900px;margin:10px auto;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+
+<button onclick="filtro('todos')" style="padding:10px 15px;border:none;border-radius:8px;cursor:pointer;">
+📦 Todos
+</button>
+
+<button onclick="filtro('ganga')" style="padding:10px 15px;border:none;border-radius:8px;background:#f59e0b;color:white;">
+🔥 Gangas
+</button>
+
+<button onclick="filtro('top')" style="padding:10px 15px;border:none;border-radius:8px;background:#16a34a;color:white;">
+💎 Top
+</button>
+
+<button onclick="filtro('bajando')" style="padding:10px 15px;border:none;border-radius:8px;background:#2563eb;color:white;">
+📉 Bajando
+</button>
+
+<button onclick="filtro('baratos')" style="padding:10px 15px;border:none;border-radius:8px;background:#111827;color:white;">
+💰 Baratos
+</button>
+
+</div>
+
+<!-- 🔍 BUSCADOR EN TIEMPO REAL -->
+<div style="max-width:900px;margin:20px auto;text-align:center;">
+
+    <input 
+        type="text" 
+        id="buscador"
+        placeholder="🔎 Buscar productos (ej: mouse, Logitech, gamer...)"
+        style="
+            width:100%;
+            padding:12px;
+            border-radius:10px;
+            border:1px solid #ccc;
+            font-size:16px;
+        "
+    >
+
+</div>
+
+<div style="max-width:900px;margin:20px auto;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+
+<button onclick="filtrar('todos')" style="padding:10px 15px;border:none;border-radius:8px;cursor:pointer;">
+📦 Todos
+</button>
+
+<button onclick="filtrar('ganga')" style="padding:10px 15px;border:none;border-radius:8px;background:#f59e0b;color:white;cursor:pointer;">
+🔥 Gangas
+</button>
+
+<button onclick="filtrar('top')" style="padding:10px 15px;border:none;border-radius:8px;background:#16a34a;color:white;cursor:pointer;">
+💎 Top
+</button>
+
+<button onclick="filtrar('bajando')" style="padding:10px 15px;border:none;border-radius:8px;background:#2563eb;color:white;cursor:pointer;">
+📉 Bajando
+</button>
+
+</div>
+
+{% if top_ofertas|length > 0 %}
+<div style="
+background: linear-gradient(90deg,#111827,#1f2937);
+color:white;
+padding:20px;
+border-radius:15px;
+margin:20px auto;
+max-width:900px;
+box-shadow:0 10px 30px #0004;
+">
+
+🏆 <b>OFERTA MÁS FUERTE DEL DÍA</b><br><br>
+
+💎 {{ top_ofertas[0].titulo }}<br>
+💰 {{ top_ofertas[0].precio }}<br>
+🎯 Confianza: {{ top_ofertas[0].confianza_compra }}%<br>
+🔥 {{ top_ofertas[0].calidad_final }}<br>
+
+</div>
+{% endif %}
+
+
+<h2 style="max-width:900px;margin:30px auto 10px;">
+🏆 TOP 5 GANGAS DEL DÍA
+</h2>
+
+{% if mejor_oferta %}
+<div style="
+background: linear-gradient(90deg,#111827,#1f2937);
+color:white;
+padding:15px;
+border-radius:12px;
+margin-bottom:15px;
+">
+
+🏆 <b>MEJOR COMPRA DEL DÍA</b><br>
+
+💎 {{ mejor_oferta.titulo }}<br>
+🎯 Confianza: {{ mejor_oferta.confianza_compra }}%<br>
+🔥 {{ mejor_oferta.calidad_final }}
+
+</div>
+{% endif %}
+
+{% for producto in top_ofertas %}
+
+<div class="producto" style="border:3px solid gold;">
+
+{% if loop.index == 1 %}
+<h2>🥇 MEJOR OFERTA</h2>
+{% elif loop.index == 2 %}
+<h2>🥈 SEGUNDA MEJOR</h2>
+{% elif loop.index == 3 %}
+<h2>🥉 TERCERA MEJOR</h2>
+{% else %}
+<h2>⭐ DESTACADA</h2>
+{% endif %}
+
+{% if producto.imagen %}
+<img src="{{ producto.imagen }}">
+{% endif %}
+
+<div class="info">
+
+<div style="font-size:28px;font-weight:bold;color:#f59e0b;">
+🏆 GANGA DESTACADA
+</div>
+
+<div style="margin-top:8px;font-size:18px;">
+{{ producto.calidad_final }}
+{% if producto.calidad_final == "💎 VALIDADA COMO GANGA REAL" %}
+<div style="color:#16a34a;font-weight:bold;">
+💎 GANGA VERIFICADA
+</div>
+{% elif producto.calidad_final == "🔥 POSIBLE BUENA OFERTA" %}
+<div style="color:#f59e0b;font-weight:bold;">
+🔥 BUENA OPORTUNIDAD
+</div>
+{% else %}
+<div style="color:#6b7280;">
+⭐ NORMAL
+</div>
+{% endif %}
+</div>
+
+<div style="margin-top:8px;">
+🎯 Confianza:
+<b>{{ producto.confianza_compra }}%</b>
+<div style="background:#e5e7eb;height:10px;border-radius:5px;margin:6px 0;">
+    <div style="
+        width:{{ producto.confianza_compra }}%;
+        background:linear-gradient(90deg,#22c55e,#16a34a);
+        height:10px;
+        border-radius:5px;">
+    </div>
+</div>
+
+<div style="margin-top:8px;">
+💯 Valor de compra:
+<div style="background:#e5e7eb;height:8px;border-radius:5px;">
+    <div style="
+        width:{{ producto.puntaje }}%;
+        background:linear-gradient(90deg,#f59e0b,#ef4444);
+        height:8px;
+        border-radius:5px;">
+    </div>
+</div>
+</div>
+</div>
+
+<div class="nivel">
+{{ producto.nivel }}
+</div>
+
+<div class="titulo">
+{{ producto.titulo }}
+</div>
+
+<div class="precio">
+{{ producto.precio }}
+</div>
+
+<div style="margin-top:8px;font-size:18px;">
+{{ producto.ganga }}
+</div>
+
+<p>
+
+💎 {{ producto.calidad_final }}<br>
+
+🎯 {{ producto.confianza_compra }}% de confianza
+
+<div style="margin-top:6px;">
+    {{ producto.popularidad }}
+</div>
+
+</p>
+
+<a class="btn" href="{{ producto.link }}" target="_blank">
+🛒 VER OFERTA
+</a>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+
+{% for producto in ofertas %}
+
+
+
+<div class="producto">
+
+
+
+{% if producto.imagen %}
+
+<img src="{{ producto.imagen }}">
+
+
+{% endif %}
+
+
+
+<div class="info">
+
+
+<div class="nivel">
+
+{% if loop.index == 1 %}
+<div style="color:gold;font-weight:bold;">
+🥇 #1 MEJOR OFERTA
+</div>
+{% elif loop.index == 2 %}
+<div style="color:silver;font-weight:bold;">
+🥈 #2
+</div>
+{% elif loop.index == 3 %}
+<div style="color:#cd7f32;font-weight:bold;">
+🥉 #3
+</div>
+{% endif %}
+
+{{ producto.nivel }}
+
+</div>
+
+
+<div class="titulo">
+
+{{ producto.titulo }}
+
+</div>
+
+
+
+<div class="precio">
+
+{{ producto.precio }}
+
+</div>
+
+
+
+<p>
+
+⭐ Puntaje:
+<b>{{ producto.puntaje }}/100</b>
+
+<br>
+
+🏪 {{ producto.tienda }}
+
+<br>
+
+📍 Huancayo
+
+{% if producto.historial_precios %}
+
+<br><br>
+
+<div style="font-size:12px; color:gray;">
+    📊 Historial de precios:
+    <ul>
+        {% for h in producto.historial_precios[-5:] %}
+            <li>
+                💰 S/ {{ h.precio }} - 🕒 {{ h.fecha }}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endif %}
+
+{% if producto.descuento %}
+
+<br>
+
+🔥 Descuento:
+{{ producto.descuento }}%
+
+{% endif %}
+
+{% if producto.mensaje %}
+
+<br><br>
+
+<b>{{ producto.mensaje }}</b>
+
+{% if producto.analisis %}
+
+<br><br>
+
+<div style="border-top:1px solid #ddd; padding-top:10px;">
+
+    🧠 <b>ANÁLISIS DE COMPRA</b><br><br>
+
+    {{ producto.analisis.decision }}<br>
+
+    🎯 Confianza: {{ producto.analisis.confianza }}%<br>
+
+    📊 Tendencia: {{ producto.analisis.tendencia }}<br><br>
+
+    {% for r in producto.analisis.razones %}
+        ✔ {{ r }}<br>
+    {% endfor %}
+
+</div>
+
+{% endif %}
+
+{% endif %}
+
+</p>
+
+
+
+<a class="btn" href="{{ producto.link }}" target="_blank">
+
+🛒 VER OFERTA
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+{% endfor %}
+
+<script>
+const buscador = document.getElementById("buscador");
+
+buscador.addEventListener("input", function () {
+    const texto = this.value.toLowerCase();
+    const productos = document.querySelectorAll(".producto");
+
+    productos.forEach(p => {
+        const contenido = p.innerText.toLowerCase();
+
+        if (contenido.includes(texto)) {
+            p.style.display = "flex";
+        } else {
+            p.style.display = "none";
+        }
+    });
+});
+</script>
+
+<script>
+function filtro(tipo) {
+    const productos = document.querySelectorAll(".producto");
+
+    productos.forEach(p => {
+
+        const texto = p.innerText.toLowerCase();
+
+        let mostrar = false;
+
+        if (tipo === "todos") {
+            mostrar = true;
+        }
+
+        else if (tipo === "ganga") {
+            mostrar = texto.includes("ganga") || texto.includes("💎");
+        }
+
+        else if (tipo === "top") {
+            mostrar = texto.includes("puntaje") && parseInt(texto.match(/\d+/)) >= 70;
+        }
+
+        else if (tipo === "bajando") {
+            mostrar = texto.includes("bajó") || texto.includes("caída") || texto.includes("bajando");
+        }
+
+        else if (tipo === "baratos") {
+            mostrar = texto.includes("s/") && (texto.includes("50") || texto.includes("80") || texto.includes("100"));
+        }
+
+        p.style.display = mostrar ? "flex" : "none";
+    });
+}
+</script>
+
+<script>
+
+function filtrar(tipo){
+
+    let productos = document.querySelectorAll(".producto");
+
+    productos.forEach(p => {
+
+        let texto = p.innerText.toUpperCase();
+
+        if(tipo === "TODOS"){
+            p.style.display = "flex";
+        }
+
+        else if(tipo === "GANGA"){
+            p.style.display = texto.includes("GANGA") ? "flex" : "none";
+        }
+
+        else if(tipo === "BUENA"){
+            p.style.display = texto.includes("BUENA") || texto.includes("OPORTUNIDAD") ? "flex" : "none";
+        }
+
+        else if(tipo === "BAJANDO"){
+            p.style.display = texto.includes("BAJANDO") ? "flex" : "none";
+        }
+
+    });
+
+}
+
+</script>
+
+<script>
+
+const buscador = document.getElementById("buscador");
+
+buscador.addEventListener("input", function () {
+
+    const texto = this.value.toLowerCase();
+
+    const productos = document.querySelectorAll(".producto");
+
+    productos.forEach(p => {
+
+        const titulo = p.querySelector(".titulo").innerText.toLowerCase();
+
+        if (titulo.includes(texto)) {
+            p.style.display = "flex";
+        } else {
+            p.style.display = "none";
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+
+</html>
