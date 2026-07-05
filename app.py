@@ -23,7 +23,6 @@ def home():
     ofertas = cargar_json("ofertas.json")
     historial = cargar_json("historial.json")
 
-    ofertas = procesar_ofertas(ofertas, historial)
 
     ofertas = sorted(
         ofertas,
@@ -48,4 +47,8 @@ def actualizar():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import os
+
+    port = int(os.environ.get("PORT", 10000))
+
+    app.run(host="0.0.0.0", port=port)
