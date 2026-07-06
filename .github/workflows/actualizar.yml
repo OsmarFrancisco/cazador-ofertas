@@ -21,8 +21,8 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requisitos.txt
 
-      - name: Instalar navegadores de Playwright
-        run: playwright install
+      - name: Instalar Playwright
+        run: python -m playwright install --with-deps
 
       - name: Ejecutar actualizador
         run: python actualizador.py
