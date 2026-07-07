@@ -1,5 +1,7 @@
 from scrapers import falabella
 from scrapers import mercadolibre
+from analizador import procesar_ofertas
+
 import json
 import os
 from datetime import datetime
@@ -263,7 +265,12 @@ def actualizar_historial(ofertas):
                 }
 
             )
-
+       
+    ofertas = procesar_ofertas(
+        ofertas,
+        cargar_historial()
+    )    
+         
     guardar_json(
         HISTORIAL,
         historial
