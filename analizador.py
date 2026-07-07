@@ -5,19 +5,16 @@ import os
 TELEGRAM_TOKEN = "8952756452:AAGfe1S9fs1ACHFn5BuPBEJ2Pix5LvdPEJw"
 CHAT_ID = "5267810291"
 
-def guardar_historial(historial):
-    import json
-
-    with open("historial.json", "w", encoding="utf-8") as f:
-        json.dump(historial, f, indent=4, ensure_ascii=False)
-
 def enviar_telegram(mensaje):
+
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
 
-    requests.post(url, data={
+    respuesta = requests.post(url, data={
         "chat_id": CHAT_ID,
         "text": mensaje
     })
+
+    print("Telegram:", respuesta.text)
 
 def analizar_compra(producto):
 
@@ -216,7 +213,7 @@ def calcular_puntaje(producto):
 
     else:
 
-        puntos -= 10
+        puntos += 0
 
 
 
@@ -297,24 +294,28 @@ def procesar_ofertas(ofertas, historial):
         precio = float(str(producto.get("precio", 0)).replace("S/", "").replace(",", "").strip())
         titulo = producto.get("titulo", "")
 
-        # 💎 FILTRO GANGA REAL (MEJORADO)
-        ganga_real = (
-            descuento >= 50 and
-            puntaje >= 70 and
-            precio <= 300
-        )
+        # =====================================
+        # 🚨 DETECTOR DE OFERTAS REALES
+        # =====================================
 
-        compra_urgente = (
-            descuento >= 70 and
-            puntaje >= 75 and
-            precio <= 400
-        )
+        if descuento >= 90:
 
-        if compra_urgente:
-            nivel_alerta = "🔥 COMPRA URGENTE REAL"
-        elif ganga_real:
-            nivel_alerta = "💎 GANGA REAL"
+            nivel_alerta = "⚠️ ERROR EXTREMO"
+
+        elif descuento >= 70:
+
+            nivel_alerta = "🚨 POSIBLE ERROR DE PRECIO"
+
+        elif descuento >= 50:
+
+            nivel_alerta = "🔥 GANGA REAL"
+
+        elif descuento >= 30:
+
+            nivel_alerta = "🟢 BUENA OPORTUNIDAD"
+
         else:
+
             nivel_alerta = ""
 
         producto["nivel_alerta"] = nivel_alerta

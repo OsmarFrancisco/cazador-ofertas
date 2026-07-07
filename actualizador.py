@@ -265,11 +265,6 @@ def actualizar_historial(ofertas):
                 }
 
             )
-       
-    ofertas = procesar_ofertas(
-        ofertas,
-        cargar_historial()
-    )    
          
     guardar_json(
         HISTORIAL,
@@ -361,6 +356,10 @@ actualizar_historial(
     ofertas
 )
 
+ofertas = procesar_ofertas(
+    ofertas,
+    cargar_historial()
+)
 
 guardar_json(
     ARCHIVO,
