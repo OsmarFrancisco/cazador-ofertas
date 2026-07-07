@@ -293,6 +293,11 @@ def procesar_ofertas(ofertas, historial):
         puntaje = producto.get("puntaje", 0)
         precio = float(str(producto.get("precio", 0)).replace("S/", "").replace(",", "").strip())
         titulo = producto.get("titulo", "")
+        precio_habitual = producto.get(
+            "precio_maximo",
+            precio
+        )
+
 
         # =====================================
         # 🚨 DETECTOR DE OFERTAS REALES
@@ -324,14 +329,18 @@ def procesar_ofertas(ofertas, historial):
         if nivel_alerta:
 
             mensaje = f"""
+        {titulo}
+
         {nivel_alerta}
 
-        📦 {titulo}
-        💰 Precio: S/ {precio}
-        💎 Descuento: {descuento}%
-        🎯 Puntaje: {puntaje}
+        💰 Ahora:
+        S/ {precio}
 
-        👉 COMPRA ANALIZADA COMO GANGA REAL
+        💵 Habitual:
+        S/ {precio_habitual}
+
+        📉 Caída real:
+        {descuento}%
         """
 
             enviar_telegram(mensaje)
