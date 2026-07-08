@@ -5,6 +5,24 @@ import os
 TELEGRAM_TOKEN = "8952756452:AAGfe1S9fs1ACHFn5BuPBEJ2Pix5LvdPEJw"
 CHAT_ID = "5267810291"
 
+def limpiar_precio(valor):
+
+    texto = str(valor)
+
+    texto = texto.replace("S/", "")
+    texto = texto.replace(",", "")
+    texto = texto.strip()
+
+    if "-" in texto:
+
+        texto = texto.split("-")[0].strip()
+
+    try:
+        return float(texto)
+
+    except:
+        return 0
+
 def enviar_telegram(mensaje):
 
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
@@ -18,7 +36,7 @@ def enviar_telegram(mensaje):
 
 def analizar_compra(producto):
 
-    precio = float(str(producto.get("precio", 0)).replace("S/", "").replace(",", "").strip())
+    precio = limpiar_precio(producto.get("precio",0))
     minimo = float(producto.get("precio_minimo", precio))
     maximo = float(producto.get("precio_maximo", precio))
     descuento = producto.get("descuento", 0)
@@ -176,18 +194,9 @@ def calcular_puntaje(producto):
 
 
 
-    try:
-
-        precio = float(
-            producto.get(
-                "precio",
-                9999
-            )
-        )
-
-    except:
-
-        precio = 9999
+    precio = limpiar_precio(
+        producto.get("precio",9999)
+    )
 
 
 
@@ -291,14 +300,15 @@ def procesar_ofertas(ofertas, historial):
         
         descuento = producto.get("descuento", 0)
         puntaje = producto.get("puntaje", 0)
-        precio = float(str(producto.get("precio", 0)).replace("S/", "").replace(",", "").strip())
+        precio = limpiar_precio(producto.get("precio",0))
         titulo = producto.get("titulo", "")
         precio_habitual = producto.get(
             "precio_maximo",
             precio
         )
 
-
+        link = producto.get("link", "")
+         
         # =====================================
         # 🚨 DETECTOR DE OFERTAS REALES
         # =====================================
@@ -341,6 +351,9 @@ def procesar_ofertas(ofertas, historial):
 
         📉 Caída real:
         {descuento}%
+           
+        🛒 Comprar: 
+        {link}
         """
 
             enviar_telegram(mensaje)
