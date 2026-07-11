@@ -327,7 +327,7 @@ def procesar_ofertas(ofertas, historial):
 
             nivel_alerta = "🔥 GANGA REAL"
 
-        elif descuento >= 0:
+        elif descuento >= 30:
 
             nivel_alerta = "🟢 BUENA OPORTUNIDAD"
 
