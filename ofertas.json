@@ -1,18 +1,18 @@
 [
     {
-        "titulo": "JVC Televisor 43\" QLED FHD Google Tv LT-43KM4584 Smart Tv Por FALABELLA S/ 599",
-        "precio": "S/ 599",
+        "titulo": "GENERICO RACK TV SOPORTE PARA TELEVISOR DE 40 A 85 PULGADAS CON DOBLE BRAZO ARTICULADO Por Salamanca Store S/ 79.90",
+        "precio": "S/ 79.90",
         "tienda": "Falabella Perú",
         "ubicacion": "Huancayo",
         "imagen": "",
         "link": "",
-        "id": "Falabella Perú|jvc televisor 43\" qled fhd google tv lt-43km4584 smart tv por falabella s/ 599",
-        "precio_anterior": 599.0,
-        "precio_minimo": 599.0,
+        "id": "Falabella Perú|generico rack tv soporte para televisor de 40 a 85 pulgadas con doble brazo articulado por salamanca store s/ 79.90",
+        "precio_anterior": 79.9,
+        "precio_minimo": 79.9,
         "descuento": 0,
         "nivel": "📦 Oferta",
         "historial_precios": [],
-        "puntaje": 0,
+        "puntaje": 35,
         "analisis": {
             "decision": "🔥 BUENA OPORTUNIDAD",
             "confianza": 65,
@@ -25,19 +25,19 @@
         "tendencia_texto": "➖ Estable",
         "decision_compra": "🔥 BUENA OPORTUNIDAD",
         "confianza_compra": 65,
-        "score_ai": 39.0,
+        "score_ai": 53.0,
         "nivel_alerta": ""
     },
     {
-        "titulo": "CAIXUN Smart TV LED 43 FHD Roku TV C43V1FR Por CAIXUN TIENDA OFICIAL S/ 559",
-        "precio": "S/ 559",
+        "titulo": "JVC Televisor 43\" QLED FHD Google Tv LT-43KM4584 Smart Tv Por FALABELLA S/ 599",
+        "precio": "S/ 599",
         "tienda": "Falabella Perú",
         "ubicacion": "Huancayo",
         "imagen": "",
         "link": "",
-        "id": "Falabella Perú|caixun smart tv led 43 fhd roku tv c43v1fr por caixun tienda oficial s/ 559",
-        "precio_anterior": 559.0,
-        "precio_minimo": 559.0,
+        "id": "Falabella Perú|jvc televisor 43\" qled fhd google tv lt-43km4584 smart tv por falabella s/ 599",
+        "precio_anterior": 599.0,
+        "precio_minimo": 599.0,
         "descuento": 0,
         "nivel": "📦 Oferta",
         "historial_precios": [],
@@ -174,6 +174,31 @@
         "nivel_alerta": ""
     },
     {
+        "titulo": "SAMSUNG Control Remoto Original BN59-01358 Para smart tv Por COMPUVISION. S/ 99",
+        "precio": "S/ 99",
+        "tienda": "Falabella Perú",
+        "ubicacion": "Huancayo",
+        "imagen": "",
+        "link": "",
+        "id": "Falabella Perú|samsung control remoto original bn59-01358 para smart tv por compuvision. s/ 99",
+        "historial_precios": [],
+        "puntaje": 30,
+        "analisis": {
+            "decision": "🔥 BUENA OPORTUNIDAD",
+            "confianza": 65,
+            "tendencia": "➖ Estable",
+            "razones": [
+                "💎 Muy cerca del mínimo histórico",
+                "Tendencia: ➖ Estable"
+            ]
+        },
+        "tendencia_texto": "➖ Estable",
+        "decision_compra": "🔥 BUENA OPORTUNIDAD",
+        "confianza_compra": 65,
+        "score_ai": 51.0,
+        "nivel_alerta": ""
+    },
+    {
         "titulo": "JVC Televisor 58\" Qled Pro 4k Google Tv Smart Tv Por FALABELLA S/ 1,049",
         "precio": "S/ 1,049",
         "tienda": "Falabella Perú",
@@ -200,35 +225,6 @@
         "decision_compra": "🔥 BUENA OPORTUNIDAD",
         "confianza_compra": 65,
         "score_ai": 41.0,
-        "nivel_alerta": ""
-    },
-    {
-        "titulo": "SAMSUNG Televisor Smart 55 QLED QN55Q7FAAGXPE Por CARSA TIENDA OFICIAL S/ 1,299",
-        "precio": "S/ 1,299",
-        "tienda": "Falabella Perú",
-        "ubicacion": "Huancayo",
-        "imagen": "",
-        "link": "",
-        "id": "Falabella Perú|samsung televisor smart 55 qled qn55q7faagxpe por carsa tienda oficial s/ 1,299",
-        "precio_anterior": 1299.0,
-        "precio_minimo": 1299.0,
-        "descuento": 0,
-        "nivel": "📦 Oferta",
-        "historial_precios": [],
-        "puntaje": 0,
-        "analisis": {
-            "decision": "🔥 BUENA OPORTUNIDAD",
-            "confianza": 65,
-            "tendencia": "➖ Estable",
-            "razones": [
-                "💎 Muy cerca del mínimo histórico",
-                "Tendencia: ➖ Estable"
-            ]
-        },
-        "tendencia_texto": "➖ Estable",
-        "decision_compra": "🔥 BUENA OPORTUNIDAD",
-        "confianza_compra": 65,
-        "score_ai": 39.0,
         "nivel_alerta": ""
     },
     {
@@ -754,19 +750,19 @@
         "nivel_alerta": ""
     },
     {
-        "titulo": "CAIXUN Smart TV LED 32 HD Roku TV C32V1HR Por CAIXUN TIENDA OFICIAL S/ 399",
-        "precio": "S/ 399",
+        "titulo": "SAMSUNG Televisor Smart 55 QLED QN55Q7FAAGXPE Por CARSA TIENDA OFICIAL S/ 1,299",
+        "precio": "S/ 1,299",
         "tienda": "Falabella Perú",
         "ubicacion": "Huancayo",
         "imagen": "",
         "link": "",
-        "id": "Falabella Perú|caixun smart tv led 32 hd roku tv c32v1hr por caixun tienda oficial s/ 399",
-        "precio_anterior": 399.0,
-        "precio_minimo": 399.0,
+        "id": "Falabella Perú|samsung televisor smart 55 qled qn55q7faagxpe por carsa tienda oficial s/ 1,299",
+        "precio_anterior": 1299.0,
+        "precio_minimo": 1299.0,
         "descuento": 0,
         "nivel": "📦 Oferta",
         "historial_precios": [],
-        "puntaje": 5,
+        "puntaje": 0,
         "analisis": {
             "decision": "🔥 BUENA OPORTUNIDAD",
             "confianza": 65,
@@ -779,23 +775,23 @@
         "tendencia_texto": "➖ Estable",
         "decision_compra": "🔥 BUENA OPORTUNIDAD",
         "confianza_compra": 65,
-        "score_ai": 41.0,
+        "score_ai": 39.0,
         "nivel_alerta": ""
     },
     {
-        "titulo": "MAGCUBIC Proyector Portátil L018 FullHD Por Repecorp S/ 599",
-        "precio": "S/ 599",
+        "titulo": "CAIXUN Smart TV LED 43 FHD Roku TV C43V1FR Por CAIXUN TIENDA OFICIAL S/ 559",
+        "precio": "S/ 559",
         "tienda": "Falabella Perú",
         "ubicacion": "Huancayo",
         "imagen": "",
         "link": "",
-        "id": "Falabella Perú|magcubic proyector portátil l018 fullhd por repecorp s/ 599",
-        "precio_anterior": 599.0,
-        "precio_minimo": 599.0,
+        "id": "Falabella Perú|caixun smart tv led 43 fhd roku tv c43v1fr por caixun tienda oficial s/ 559",
+        "precio_anterior": 559.0,
+        "precio_minimo": 559.0,
         "descuento": 0,
         "nivel": "📦 Oferta",
         "historial_precios": [],
-        "puntaje": 5,
+        "puntaje": 0,
         "analisis": {
             "decision": "🔥 BUENA OPORTUNIDAD",
             "confianza": 65,
@@ -808,7 +804,7 @@
         "tendencia_texto": "➖ Estable",
         "decision_compra": "🔥 BUENA OPORTUNIDAD",
         "confianza_compra": 65,
-        "score_ai": 41.0,
+        "score_ai": 39.0,
         "nivel_alerta": ""
     },
     {
@@ -2433,19 +2429,19 @@
         "nivel_alerta": ""
     },
     {
-        "titulo": "HP Impresora Smart Tank 580 + Mochila Por FALABELLA S/ 489",
-        "precio": "S/ 489",
+        "titulo": "APPLE MacBook Neo 8GB 512GB Por FALABELLA S/ 3,299",
+        "precio": "S/ 3,299",
         "tienda": "Falabella Perú",
         "ubicacion": "Huancayo",
         "imagen": "",
         "link": "",
-        "id": "Falabella Perú|hp impresora smart tank 580 + mochila por falabella s/ 489",
-        "precio_anterior": 489.0,
-        "precio_minimo": 489.0,
+        "id": "Falabella Perú|apple macbook neo 8gb 512gb por falabella s/ 3,299",
+        "precio_anterior": 3299.0,
+        "precio_minimo": 3299.0,
         "descuento": 0,
         "nivel": "📦 Oferta",
         "historial_precios": [],
-        "puntaje": 0,
+        "puntaje": 20,
         "analisis": {
             "decision": "🔥 BUENA OPORTUNIDAD",
             "confianza": 65,
@@ -2458,7 +2454,7 @@
         "tendencia_texto": "➖ Estable",
         "decision_compra": "🔥 BUENA OPORTUNIDAD",
         "confianza_compra": 65,
-        "score_ai": 39.0,
+        "score_ai": 47.0,
         "nivel_alerta": ""
     },
     {
@@ -2578,44 +2574,15 @@
         "nivel_alerta": ""
     },
     {
-        "titulo": "HP Laptop Gaming OMEN HyperX Intel Core i7 16 GB RAM RTX 5060 512 GB SSD 15.3\" Por FALABELLA S/ 7,099",
-        "precio": "S/ 7,099",
+        "titulo": "HP Impresora Smart Tank 580 + Mochila Por FALABELLA S/ 489",
+        "precio": "S/ 489",
         "tienda": "Falabella Perú",
         "ubicacion": "Huancayo",
         "imagen": "",
         "link": "",
-        "id": "Falabella Perú|hp laptop gaming omen hyperx intel core i7 16 gb ram rtx 5060 512 gb ssd 15.3\" por falabella s/ 7,099",
-        "precio_anterior": 7099.0,
-        "precio_minimo": 7099.0,
-        "descuento": 0,
-        "nivel": "📦 Oferta",
-        "historial_precios": [],
-        "puntaje": 5,
-        "analisis": {
-            "decision": "🔥 BUENA OPORTUNIDAD",
-            "confianza": 65,
-            "tendencia": "➖ Estable",
-            "razones": [
-                "💎 Muy cerca del mínimo histórico",
-                "Tendencia: ➖ Estable"
-            ]
-        },
-        "tendencia_texto": "➖ Estable",
-        "decision_compra": "🔥 BUENA OPORTUNIDAD",
-        "confianza_compra": 65,
-        "score_ai": 41.0,
-        "nivel_alerta": ""
-    },
-    {
-        "titulo": "HP Laptop ZBook Power G11 AMD Ryzen 9-8945HS 32GB 1TB SSD Por IX Comercio S/ 10,949",
-        "precio": "S/ 10,949",
-        "tienda": "Falabella Perú",
-        "ubicacion": "Huancayo",
-        "imagen": "",
-        "link": "",
-        "id": "Falabella Perú|hp laptop zbook power g11 amd ryzen 9-8945hs 32gb 1tb ssd por ix comercio s/ 10,949",
-        "precio_anterior": 10949.0,
-        "precio_minimo": 10949.0,
+        "id": "Falabella Perú|hp impresora smart tank 580 + mochila por falabella s/ 489",
+        "precio_anterior": 489.0,
+        "precio_minimo": 489.0,
         "descuento": 0,
         "nivel": "📦 Oferta",
         "historial_precios": [],
@@ -2633,6 +2600,31 @@
         "decision_compra": "🔥 BUENA OPORTUNIDAD",
         "confianza_compra": 65,
         "score_ai": 39.0,
+        "nivel_alerta": ""
+    },
+    {
+        "titulo": "HP Laptop ProBook 440 G8 i7 11va 16GB RAM 512GB SSD Reacondicionada Garantía 1 año + COOLER Por DeltaPC2010 S/ 1,879.90",
+        "precio": "S/ 1,879.90",
+        "tienda": "Falabella Perú",
+        "ubicacion": "Huancayo",
+        "imagen": "",
+        "link": "",
+        "id": "Falabella Perú|hp laptop probook 440 g8 i7 11va 16gb ram 512gb ssd reacondicionada garantía 1 año + cooler por deltapc2010 s/ 1,879.90",
+        "historial_precios": [],
+        "puntaje": 5,
+        "analisis": {
+            "decision": "🔥 BUENA OPORTUNIDAD",
+            "confianza": 65,
+            "tendencia": "➖ Estable",
+            "razones": [
+                "💎 Muy cerca del mínimo histórico",
+                "Tendencia: ➖ Estable"
+            ]
+        },
+        "tendencia_texto": "➖ Estable",
+        "decision_compra": "🔥 BUENA OPORTUNIDAD",
+        "confianza_compra": 65,
+        "score_ai": 41.0,
         "nivel_alerta": ""
     },
     {
@@ -2877,35 +2869,6 @@
         "id": "Falabella Perú|lenovo laptop amd ryzen 5 8gb 512gb ssd ideapad slim 3 serie 7000 15.6\" fhd + maletín por falabella s/ 1,799",
         "precio_anterior": 1799.0,
         "precio_minimo": 1799.0,
-        "descuento": 0,
-        "nivel": "📦 Oferta",
-        "historial_precios": [],
-        "puntaje": 20,
-        "analisis": {
-            "decision": "🔥 BUENA OPORTUNIDAD",
-            "confianza": 65,
-            "tendencia": "➖ Estable",
-            "razones": [
-                "💎 Muy cerca del mínimo histórico",
-                "Tendencia: ➖ Estable"
-            ]
-        },
-        "tendencia_texto": "➖ Estable",
-        "decision_compra": "🔥 BUENA OPORTUNIDAD",
-        "confianza_compra": 65,
-        "score_ai": 47.0,
-        "nivel_alerta": ""
-    },
-    {
-        "titulo": "APPLE MacBook Neo 8GB 512GB Por FALABELLA S/ 3,299",
-        "precio": "S/ 3,299",
-        "tienda": "Falabella Perú",
-        "ubicacion": "Huancayo",
-        "imagen": "",
-        "link": "",
-        "id": "Falabella Perú|apple macbook neo 8gb 512gb por falabella s/ 3,299",
-        "precio_anterior": 3299.0,
-        "precio_minimo": 3299.0,
         "descuento": 0,
         "nivel": "📦 Oferta",
         "historial_precios": [],
@@ -3187,19 +3150,19 @@
         "nivel_alerta": ""
     },
     {
-        "titulo": "HP Laptop 14-ep1002la Intel Core Ultra 5 8GB RAM 512GB SSD Por IX Comercio S/ 1,999",
-        "precio": "S/ 1,999",
+        "titulo": "HP Laptop Gaming OMEN HyperX Intel Core i7 16 GB RAM RTX 5060 512 GB SSD 15.3\" Por FALABELLA S/ 7,099",
+        "precio": "S/ 7,099",
         "tienda": "Falabella Perú",
         "ubicacion": "Huancayo",
         "imagen": "",
         "link": "",
-        "id": "Falabella Perú|hp laptop 14-ep1002la intel core ultra 5 8gb ram 512gb ssd por ix comercio s/ 1,999",
-        "precio_anterior": 1999.0,
-        "precio_minimo": 1999.0,
+        "id": "Falabella Perú|hp laptop gaming omen hyperx intel core i7 16 gb ram rtx 5060 512 gb ssd 15.3\" por falabella s/ 7,099",
+        "precio_anterior": 7099.0,
+        "precio_minimo": 7099.0,
         "descuento": 0,
         "nivel": "📦 Oferta",
         "historial_precios": [],
-        "puntaje": 0,
+        "puntaje": 5,
         "analisis": {
             "decision": "🔥 BUENA OPORTUNIDAD",
             "confianza": 65,
@@ -3212,7 +3175,7 @@
         "tendencia_texto": "➖ Estable",
         "decision_compra": "🔥 BUENA OPORTUNIDAD",
         "confianza_compra": 65,
-        "score_ai": 39.0,
+        "score_ai": 41.0,
         "nivel_alerta": ""
     },
     {
@@ -3390,35 +3353,6 @@
         "nivel_alerta": ""
     },
     {
-        "titulo": "VARIOS Base 4 en 1 para PS5, Ventilador, Cargador de Mandos, Portajuegos Por BOOMERS S/ 96.80",
-        "precio": "S/ 96.80",
-        "tienda": "Falabella Perú",
-        "ubicacion": "Huancayo",
-        "imagen": "",
-        "link": "",
-        "id": "Falabella Perú|varios base 4 en 1 para ps5, ventilador, cargador de mandos, portajuegos por boomers s/ 96.80",
-        "precio_anterior": 96.8,
-        "precio_minimo": 96.8,
-        "descuento": 0,
-        "nivel": "📦 Oferta",
-        "historial_precios": [],
-        "puntaje": 30,
-        "analisis": {
-            "decision": "🔥 BUENA OPORTUNIDAD",
-            "confianza": 65,
-            "tendencia": "➖ Estable",
-            "razones": [
-                "💎 Muy cerca del mínimo histórico",
-                "Tendencia: ➖ Estable"
-            ]
-        },
-        "tendencia_texto": "➖ Estable",
-        "decision_compra": "🔥 BUENA OPORTUNIDAD",
-        "confianza_compra": 65,
-        "score_ai": 51.0,
-        "nivel_alerta": ""
-    },
-    {
         "titulo": "VARIOS Mando para PS5 Blanco Alternativo Inalámb Háptica Adaptativos Mod A Por BOOMERS S/ 189.90",
         "precio": "S/ 189.90",
         "tienda": "Falabella Perú",
@@ -3445,6 +3379,35 @@
         "decision_compra": "🔥 BUENA OPORTUNIDAD",
         "confianza_compra": 65,
         "score_ai": 47.0,
+        "nivel_alerta": ""
+    },
+    {
+        "titulo": "VARIOS Base 4 en 1 para PS5, Ventilador, Cargador de Mandos, Portajuegos Por BOOMERS S/ 96.80",
+        "precio": "S/ 96.80",
+        "tienda": "Falabella Perú",
+        "ubicacion": "Huancayo",
+        "imagen": "",
+        "link": "",
+        "id": "Falabella Perú|varios base 4 en 1 para ps5, ventilador, cargador de mandos, portajuegos por boomers s/ 96.80",
+        "precio_anterior": 96.8,
+        "precio_minimo": 96.8,
+        "descuento": 0,
+        "nivel": "📦 Oferta",
+        "historial_precios": [],
+        "puntaje": 30,
+        "analisis": {
+            "decision": "🔥 BUENA OPORTUNIDAD",
+            "confianza": 65,
+            "tendencia": "➖ Estable",
+            "razones": [
+                "💎 Muy cerca del mínimo histórico",
+                "Tendencia: ➖ Estable"
+            ]
+        },
+        "tendencia_texto": "➖ Estable",
+        "decision_compra": "🔥 BUENA OPORTUNIDAD",
+        "confianza_compra": 65,
+        "score_ai": 51.0,
         "nivel_alerta": ""
     },
     {
@@ -3999,35 +3962,6 @@
         "nivel_alerta": ""
     },
     {
-        "titulo": "VARIOS Mando para PS5 Galaxia Alternativo Inalámb Háptica Adaptativos Mod B Por BOOMERS S/ 189.90",
-        "precio": "S/ 189.90",
-        "tienda": "Falabella Perú",
-        "ubicacion": "Huancayo",
-        "imagen": "",
-        "link": "",
-        "id": "Falabella Perú|varios mando para ps5 galaxia alternativo inalámb háptica adaptativos mod b por boomers s/ 189.90",
-        "precio_anterior": 189.9,
-        "precio_minimo": 189.9,
-        "descuento": 0,
-        "nivel": "📦 Oferta",
-        "historial_precios": [],
-        "puntaje": 20,
-        "analisis": {
-            "decision": "🔥 BUENA OPORTUNIDAD",
-            "confianza": 65,
-            "tendencia": "➖ Estable",
-            "razones": [
-                "💎 Muy cerca del mínimo histórico",
-                "Tendencia: ➖ Estable"
-            ]
-        },
-        "tendencia_texto": "➖ Estable",
-        "decision_compra": "🔥 BUENA OPORTUNIDAD",
-        "confianza_compra": 65,
-        "score_ai": 47.0,
-        "nivel_alerta": ""
-    },
-    {
         "titulo": "VARIOS Cubierta Tapa Reemplazo para PS5 Standard Rígido Dorado Por BOOMERS S/ 29.80",
         "precio": "S/ 29.80",
         "tienda": "Falabella Perú",
@@ -4057,6 +3991,35 @@
         "nivel_alerta": ""
     },
     {
+        "titulo": "VARIOS Mando para PS5 Galaxia Alternativo Inalámb Háptica Adaptativos Mod B Por BOOMERS S/ 189.90",
+        "precio": "S/ 189.90",
+        "tienda": "Falabella Perú",
+        "ubicacion": "Huancayo",
+        "imagen": "",
+        "link": "",
+        "id": "Falabella Perú|varios mando para ps5 galaxia alternativo inalámb háptica adaptativos mod b por boomers s/ 189.90",
+        "precio_anterior": 189.9,
+        "precio_minimo": 189.9,
+        "descuento": 0,
+        "nivel": "📦 Oferta",
+        "historial_precios": [],
+        "puntaje": 20,
+        "analisis": {
+            "decision": "🔥 BUENA OPORTUNIDAD",
+            "confianza": 65,
+            "tendencia": "➖ Estable",
+            "razones": [
+                "💎 Muy cerca del mínimo histórico",
+                "Tendencia: ➖ Estable"
+            ]
+        },
+        "tendencia_texto": "➖ Estable",
+        "decision_compra": "🔥 BUENA OPORTUNIDAD",
+        "confianza_compra": 65,
+        "score_ai": 47.0,
+        "nivel_alerta": ""
+    },
+    {
         "titulo": "LENOVO Tablet Pad 11 2025 8GB+128GB WiFi y Ratón inalámbrico Bluetooth &Teclado & Lápiz-Morado Por Water PE S/ 759",
         "precio": "S/ 759",
         "tienda": "Falabella Perú",
@@ -4083,35 +4046,6 @@
         "decision_compra": "🔥 BUENA OPORTUNIDAD",
         "confianza_compra": 65,
         "score_ai": 51.0,
-        "nivel_alerta": ""
-    },
-    {
-        "titulo": "LENOVO Tablet pad 11 2025 8+256GB WIFI 2.5K-Gris+Teclado Rosado+Lápiz táctil Por HK Top Trio PE S/ 1,059",
-        "precio": "S/ 1,059",
-        "tienda": "Falabella Perú",
-        "ubicacion": "Huancayo",
-        "imagen": "",
-        "link": "",
-        "id": "Falabella Perú|lenovo tablet pad 11 2025 8+256gb wifi 2.5k-gris+teclado rosado+lápiz táctil por hk top trio pe s/ 1,059",
-        "precio_anterior": 1059.0,
-        "precio_minimo": 1059.0,
-        "descuento": 0,
-        "nivel": "📦 Oferta",
-        "historial_precios": [],
-        "puntaje": 20,
-        "analisis": {
-            "decision": "🔥 BUENA OPORTUNIDAD",
-            "confianza": 65,
-            "tendencia": "➖ Estable",
-            "razones": [
-                "💎 Muy cerca del mínimo histórico",
-                "Tendencia: ➖ Estable"
-            ]
-        },
-        "tendencia_texto": "➖ Estable",
-        "decision_compra": "🔥 BUENA OPORTUNIDAD",
-        "confianza_compra": 65,
-        "score_ai": 47.0,
         "nivel_alerta": ""
     },
     {
@@ -4202,15 +4136,15 @@
         "nivel_alerta": ""
     },
     {
-        "titulo": "LENOVO Tablet Pad Plus 12 Idea Tab Plus 8GB+128GB WiFi Y Lápiz táctil+Teclado Rosa Por Water PE S/ 798",
-        "precio": "S/ 798",
+        "titulo": "LENOVO Tablet M11 k10 8GB+128GB WiFi y Teclado Estuche-Rosa+ Lápiz Por Water PE S/ 779",
+        "precio": "S/ 779",
         "tienda": "Falabella Perú",
         "ubicacion": "Huancayo",
         "imagen": "",
         "link": "",
-        "id": "Falabella Perú|lenovo tablet pad plus 12 idea tab plus 8gb+128gb wifi y lápiz táctil+teclado rosa por water pe s/ 798",
-        "precio_anterior": 798.0,
-        "precio_minimo": 798.0,
+        "id": "Falabella Perú|lenovo tablet m11 k10 8gb+128gb wifi y teclado estuche-rosa+ lápiz por water pe s/ 779",
+        "precio_anterior": 779.0,
+        "precio_minimo": 779.0,
         "descuento": 0,
         "nivel": "📦 Oferta",
         "historial_precios": [],
@@ -4231,17 +4165,13 @@
         "nivel_alerta": ""
     },
     {
-        "titulo": "LENOVO Tablet Pad Plus 12 8G+128G 10200mAh 2.5K de resolución pulgadas con WiFi - Gris Lápiz óptico Por HK Top Trio PE S",
-        "precio": "S/ 709",
+        "titulo": "LENOVO Tablet Pad 11 2025 6+128GB 11\" WIFI 2.5K-Gris Negro+Lápiz táctil Por Water PE S/ 579",
+        "precio": "S/ 579",
         "tienda": "Falabella Perú",
         "ubicacion": "Huancayo",
         "imagen": "",
         "link": "",
-        "id": "Falabella Perú|lenovo tablet pad plus 12 8g+128g 10200mah 2.5k de resolución pulgadas con wifi - gris lápiz óptico por hk top trio pe s",
-        "precio_anterior": 709.0,
-        "precio_minimo": 709.0,
-        "descuento": 0,
-        "nivel": "📦 Oferta",
+        "id": "Falabella Perú|lenovo tablet pad 11 2025 6+128gb 11\" wifi 2.5k-gris negro+lápiz táctil por water pe s/ 579",
         "historial_precios": [],
         "puntaje": 20,
         "analisis": {
@@ -4811,15 +4741,44 @@
         "nivel_alerta": ""
     },
     {
-        "titulo": "LENOVO Tablet M11 k10 8GB+128GB WiFi y Teclado Estuche-Rosa+ Lápiz Por Water PE S/ 779",
-        "precio": "S/ 779",
+        "titulo": "LENOVO Tablet Pad Plus 12 Idea Tab Plus 8GB+128GB WiFi Y Lápiz táctil+Teclado Rosa Por Water PE S/ 798",
+        "precio": "S/ 798",
         "tienda": "Falabella Perú",
         "ubicacion": "Huancayo",
         "imagen": "",
         "link": "",
-        "id": "Falabella Perú|lenovo tablet m11 k10 8gb+128gb wifi y teclado estuche-rosa+ lápiz por water pe s/ 779",
-        "precio_anterior": 779.0,
-        "precio_minimo": 779.0,
+        "id": "Falabella Perú|lenovo tablet pad plus 12 idea tab plus 8gb+128gb wifi y lápiz táctil+teclado rosa por water pe s/ 798",
+        "precio_anterior": 798.0,
+        "precio_minimo": 798.0,
+        "descuento": 0,
+        "nivel": "📦 Oferta",
+        "historial_precios": [],
+        "puntaje": 20,
+        "analisis": {
+            "decision": "🔥 BUENA OPORTUNIDAD",
+            "confianza": 65,
+            "tendencia": "➖ Estable",
+            "razones": [
+                "💎 Muy cerca del mínimo histórico",
+                "Tendencia: ➖ Estable"
+            ]
+        },
+        "tendencia_texto": "➖ Estable",
+        "decision_compra": "🔥 BUENA OPORTUNIDAD",
+        "confianza_compra": 65,
+        "score_ai": 47.0,
+        "nivel_alerta": ""
+    },
+    {
+        "titulo": "LENOVO Tablet pad 11 2025 8+256GB WIFI 2.5K-Gris+Teclado Rosado+Lápiz táctil Por HK Top Trio PE S/ 1,059",
+        "precio": "S/ 1,059",
+        "tienda": "Falabella Perú",
+        "ubicacion": "Huancayo",
+        "imagen": "",
+        "link": "",
+        "id": "Falabella Perú|lenovo tablet pad 11 2025 8+256gb wifi 2.5k-gris+teclado rosado+lápiz táctil por hk top trio pe s/ 1,059",
+        "precio_anterior": 1059.0,
+        "precio_minimo": 1059.0,
         "descuento": 0,
         "nivel": "📦 Oferta",
         "historial_precios": [],
