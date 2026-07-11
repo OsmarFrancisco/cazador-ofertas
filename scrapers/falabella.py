@@ -15,178 +15,127 @@ def guardar():
 
     productos = []
 
-    try:
+    with sync_playwright() as p:
 
-        with sync_playwright() as p:
+        browser = p.chromium.launch(
+            headless=True
+        )
 
-            browser = p.chromium.launch(
-                headless=True
+        page = browser.new_page()
+
+        for busqueda in BUSQUEDAS:
+
+            print(f"\n🔎 Falabella buscando: {busqueda}")
+
+            url = (
+                "https://www.falabella.com.pe/falabella-pe/search?Ntt="
+                + busqueda.replace(" ", "%20")
             )
-      
 
-            for busqueda in BUSQUEDAS:
-                
-                page = browser.new_page()   
+            page.goto(
+                url,
+                wait_until="domcontentloaded",
+                timeout=20000
+            )
 
-                print(f"\n🔎 Falabella buscando: {busqueda}")
+            page.wait_for_timeout(2000)
 
-                url = (
-                    "https://www.falabella.com.pe/falabella-pe/search?Ntt="
-                    + busqueda.replace(" ", "%20")
-                )
+            cards = page.locator("a.pod-link")
 
-                page.goto(
-                    url,
-                    wait_until="domcontentloaded",
-                    timeout=20000
-                )
+            cantidad = cards.count()
 
-                page.wait_for_timeout(1500)
+            print(
+                "Productos encontrados:",
+                cantidad
+            )
 
-                cards = page.locator(
-                    "a.pod-link"
-                )
 
-                cantidad = cards.count()
+            for i in range(min(cantidad, 30)):
 
                 print(
-                    "Productos encontrados:",
-                    cantidad
+                    f"   Leyendo producto {i+1}/{cantidad}"
                 )
 
-                for i in range(min(cantidad, 30)):
+                try:
 
-                    try:
-                        
-                        print(f"   Leyendo producto {i+1}/{cantidad}")
+                    print("      paso A")
 
-                        card_html = cards.nth(i).evaluate(
-                            "(el)=>el.innerHTML"
-                        )                                               
+                    card = cards.nth(i)
 
-                        texto = cards.nth(i).inner_text(
-                            timeout=1000
+                    print("      paso B")
+
+                    link = card.get_attribute("href")
+
+                    print("      paso C")
+
+
+                    if link and not link.startswith("http"):
+
+                        link = (
+                            "https://www.falabella.com.pe"
+                            + link
                         )
 
-                        if "S/" not in texto:
-                            continue
 
-                        partes = [
-                            x.strip()
-                            for x in texto.split("\n")
-                            if x.strip()
-                        ]
+                    texto = card.inner_text(
+                        timeout=3000
+                    )
 
-                        titulo = " ".join(
-                            partes[:4]
-                        )
+                    print("      paso D")
 
-                        precio = "Consultar"
 
-                        for x in partes:
-
-                            if "S/" in x:
-
-                                precio = x
-
-                                break
-
-                        imagen = ""
-
-                        try:
-
-                            img = card.locator("img").first
-
-                            imagen = (
-                                img.get_attribute("src")
-                                or img.get_attribute("data-src")
-                                or ""
-                            )
-
-                        except:
-
-                            pass
-
-                        link = ""
-
-                        try:
-
-                            link = card.get_attribute("href")
-
-                        except:
-
-                            pass
-
-                        if link and not link.startswith("http"):
-
-                            link = (
-                                "https://www.falabella.com.pe"
-                                + link
-                            )
-
-                        productos.append({
-
-                            "titulo": titulo[:120],
-
-                            "precio": precio,
-
-                            "tienda": "Falabella Perú",
-
-                            "ubicacion": "Huancayo",
-
-                            "imagen": imagen,
-
-                            "link": link
-
-                        })
-
-                    except:
-
+                    if "S/" not in texto:
                         continue
 
-                              
-                page.close()
-                                
-            browser.close()
 
-    except Exception as e:
+                    partes = [
+                        x.strip()
+                        for x in texto.split("\n")
+                        if x.strip()
+                    ]
 
-        print(
-            "Error Falabella:",
-            e
-        )
 
-    # ===========================
-    # ELIMINAR DUPLICADOS
-    # ===========================
+                    productos.append({
 
-    unicos = {}
+                        "titulo": " ".join(partes[:4]),
 
-    for producto in productos:
+                        "precio": next(
+                            (
+                                x for x in partes
+                                if "S/" in x
+                            ),
+                            "Consultar"
+                        ),
 
-        clave = producto.get(
-            "link",
-            ""
-        )
+                        "tienda": "Falabella Perú",
 
-        if not clave:
+                        "ubicacion": "Huancayo",
 
-            clave = producto.get(
-                "titulo",
-                ""
-            ).lower()
+                        "imagen": "",
 
-        if clave not in unicos:
+                        "link": link or ""
 
-            unicos[clave] = producto
+                    })
 
-    productos = list(
-        unicos.values()
-    )
+
+                except Exception as e:
+
+                    print(
+                        "ERROR producto:",
+                        i,
+                        e
+                    )
+
+                    continue
+
+
+        browser.close()
+
 
     print(
         "Falabella encontradas:",
         len(productos)
     )
+
 
     return productos
