@@ -25,6 +25,8 @@ def limpiar_precio(valor):
 
 def enviar_telegram(mensaje):
 
+    print("🚨 INTENTANDO ENVIAR TELEGRAM")
+
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
 
     respuesta = requests.post(url, data={
