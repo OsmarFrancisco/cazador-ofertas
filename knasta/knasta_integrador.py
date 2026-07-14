@@ -83,7 +83,28 @@ def integrar_knasta(producto):
     return producto
 
 
+def integrar_lista_knasta(productos):
 
+    resultado = []
+
+    for producto in productos:
+
+        try:
+
+            producto = integrar_knasta(producto)
+
+        except Exception as e:
+
+            print(
+                "❌ Error Knasta:",
+                e
+            )
+
+        resultado.append(
+            producto
+        )
+
+    return resultado
 
 
 if __name__ == "__main__":

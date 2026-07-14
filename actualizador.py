@@ -1,6 +1,7 @@
 from scrapers import falabella
 from scrapers import mercadolibre
 from analizador import procesar_ofertas
+from knasta.knasta_integrador import integrar_lista_knasta
 
 import json
 import os
@@ -355,6 +356,15 @@ print("📦 Productos únicos:", len(ofertas))
 actualizar_historial(
     ofertas
 )
+
+
+print("🔎 Integrando historial Knasta...")
+
+
+ofertas = integrar_lista_knasta(
+    ofertas
+)
+
 
 ofertas = procesar_ofertas(
     ofertas,
