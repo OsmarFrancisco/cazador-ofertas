@@ -39,8 +39,25 @@ def enviar_telegram(mensaje):
 def analizar_compra(producto):
 
     precio = limpiar_precio(producto.get("precio",0))
-    minimo = float(producto.get("precio_minimo", precio))
-    maximo = float(producto.get("precio_maximo", precio))
+    minimo = float(
+        producto.get(
+            "precio_minimo_knasta",
+            producto.get(
+                "precio_minimo",
+                precio
+            )
+        )
+    )
+
+    maximo = float(
+        producto.get(
+            "precio_maximo_knasta",
+            producto.get(
+                "precio_maximo",
+                precio
+            )
+        )
+    )
     descuento = producto.get("descuento", 0)
     puntaje = producto.get("puntaje", 0)
 
@@ -278,6 +295,15 @@ def calcular_puntaje(producto):
 
 def procesar_ofertas(ofertas, historial):
 
+    print("DEBUG KNasta entrada")
+
+    for p in ofertas[:5]:
+
+        print(
+            p.get("titulo"),
+            p.get("precio_minimo_knasta")
+        )
+
     for producto in ofertas:
           
         if producto.get("ya_enviado"):
@@ -285,6 +311,58 @@ def procesar_ofertas(ofertas, historial):
          
         if "historial_precios" not in producto:
             producto["historial_precios"] = []
+
+        # ===================================== 
+
+        # CALCULAR DESCUENTO REAL CON KNASTA
+
+        # =====================================
+
+        precio_actual = limpiar_precio(
+
+            producto.get("precio", 0)
+
+        )
+
+        precio_referencia = producto.get(
+
+            "promedio_historico",
+
+            producto.get(
+
+                "precio_maximo_knasta",
+
+                producto.get(
+
+                    "precio_maximo",
+
+                    precio_actual
+
+                )
+
+            )
+
+        )
+
+
+        if precio_referencia and precio_actual < precio_referencia:
+
+            descuento = round(
+                (
+                    (precio_referencia - precio_actual)
+
+                    /
+                    precio_referencia
+                )
+                * 100,
+                1
+            )
+
+        else:
+
+            descuento = 0
+
+        producto["descuento"] = descuento
 
         producto["puntaje"] = calcular_puntaje(producto)
 
@@ -300,13 +378,18 @@ def procesar_ofertas(ofertas, historial):
             producto.get("confianza_compra", 0) * 0.6
         )
         
-        descuento = producto.get("descuento", 0)
         puntaje = producto.get("puntaje", 0)
         precio = limpiar_precio(producto.get("precio",0))
         titulo = producto.get("titulo", "")
         precio_habitual = producto.get(
-            "precio_maximo",
-            precio
+            "promedio_historico",
+            producto.get(
+                "precio_maximo_knasta",
+                producto.get(
+                    "precio_maximo",
+                    precio
+                )
+            )
         )
 
         link = producto.get("link", "")

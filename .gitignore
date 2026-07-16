@@ -1,18 +1,54 @@
+# =========================
 # Entorno virtual
+# =========================
 venv/
 
+# =========================
 # Caché de Python
+# =========================
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Archivos temporales
+# =========================
+# Logs
+# =========================
 *.log
 
-# Configuración de VS Code
+# =========================
+# VS Code
+# =========================
 .vscode/
 
-# Archivos del sistema
+# =========================
+# Sistema operativo
+# =========================
 .DS_Store
 Thumbs.db
+
+# =========================
+# Base de datos generada
+# =========================
+ofertas.db
+precios.db
+
+# =========================
+# Archivos generados
+# =========================
+ofertas.json
+historial.json
+knasta_urls.json
+
+# =========================
+# Backups
+# =========================
+*_backup*.json
+*_backup*.db
+
+# =========================
+# Archivos de prueba
+# =========================
+probar_*.py
+prueba_*.py
+test_*.py

@@ -1,7 +1,10 @@
 from scrapers import falabella
 from scrapers import mercadolibre
+
 from analizador import procesar_ofertas
+
 from knasta.knasta_integrador import integrar_lista_knasta
+from knasta.llenar_knasta_url import llenar_knasta_urls
 
 import json
 import os
@@ -352,6 +355,12 @@ ofertas = list(ofertas_unicas.values())
 
 print("🧹 Duplicados eliminados:", duplicados)
 print("📦 Productos únicos:", len(ofertas))
+
+print("🔎 Buscando URLs Knasta...")
+
+ofertas = llenar_knasta_urls(
+    ofertas
+)
 
 actualizar_historial(
     ofertas

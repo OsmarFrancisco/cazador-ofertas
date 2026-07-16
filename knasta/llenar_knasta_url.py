@@ -4,6 +4,42 @@ import time
 
 from knasta.buscar_api_knasta import buscar_api_knasta
 
+def generar_url_knasta(producto):
+
+    retail = producto.get(
+        "retail",
+        ""
+    )
+
+    product_id = producto.get(
+        "product_id",
+        ""
+    )
+
+    seo = producto.get(
+        "seo_title",
+        ""
+    )
+
+    seo = seo.lower()
+
+    seo = re.sub(
+        r'[^a-z0-9\s-]',
+        '',
+        seo
+    )
+
+    seo = seo.replace(
+        " ",
+        "-"
+    )
+
+    return (
+        "https://knasta.pe/detail/"
+        f"{retail}/"
+        f"{product_id}/"
+        f"{seo}"
+    )
 
 ARCHIVO = "ofertas.json"
 
@@ -54,14 +90,21 @@ def calcular_match(titulo_oferta, titulo_knasta):
 def limpiar_busqueda(titulo):
 
     palabras_quitar = [
-        "por",
-        "falabella",
-        "plazavea",
-        "oechsle",
-        "promart",
-        "coolbox",
-        "s/",
-    ]
+
+    "por",
+    "falabella",
+    "plazavea",
+    "oechsle",
+    "promart",
+    "coolbox",
+    "s/",
+    "cyber",
+    "wow",
+    "oficial",
+    "tienda",
+    "nuevo",
+    "reacondicionado",
+]
 
 
     titulo = titulo.lower()
@@ -80,8 +123,10 @@ def limpiar_busqueda(titulo):
         titulo
     )
 
+    palabras = titulo.split()
+
     return " ".join(
-        titulo.split()[:12]
+        palabras[:8]
     )
 
 
@@ -174,7 +219,7 @@ def buscar_mejor_match(producto):
 
 
 
-    if mejor and mejor_score >= 65:
+    if mejor and mejor_score >= 55:
 
 
         return {
@@ -186,13 +231,29 @@ def buscar_mejor_match(producto):
                 ),
 
             "url":
-                mejor.get(
-                    "url"
+                generar_url_knasta(
+                    mejor
                 )
 
         }
 
+    if mejor:
+        print(
+            "❌ Rechazado:",
+            titulo_original
+        )
 
+        print(
+            "Mejor:",
+            mejor.get("title")
+        )
+
+        print(
+            "Score:",
+            round(mejor_score,2)
+        )
+    return {}    
+    
     return None
 
 
@@ -269,6 +330,37 @@ def main():
             indent=4
         )
 
+        # ====================================
+    # GUARDAR MEMORIA PERMANENTE DE KNASTA
+    # ====================================
+
+    memoria_knasta = []
+
+    for producto in productos:
+
+        if producto.get("knasta_url"):
+
+            memoria_knasta.append(
+                {
+                    "titulo": producto.get("titulo"),
+                    "link": producto.get("link"),
+                    "knasta_url": producto.get("knasta_url")
+                }
+            )
+
+
+    with open(
+        "knasta_urls.json",
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        json.dump(
+            memoria_knasta,
+            f,
+            ensure_ascii=False,
+            indent=4
+        )
 
 
     print("====================")
@@ -282,3 +374,35 @@ def main():
 if __name__ == "__main__":
 
     main()
+
+def llenar_knasta_urls(productos):
+
+    contador = 0
+
+
+    for producto in productos:
+
+        # si ya tiene URL no repetir búsqueda
+        if producto.get("knasta_url"):
+            continue
+
+
+        resultado = buscar_mejor_match(
+            producto
+        )
+
+
+        if resultado.get("url"):
+
+            producto["knasta_url"] = resultado["url"]
+
+            contador += 1
+
+
+    print(
+        "URLs Knasta agregadas:",
+        contador
+    )
+
+
+    return productos    
