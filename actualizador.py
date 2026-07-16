@@ -1,5 +1,6 @@
 from scrapers import falabella
-from scrapers import mercadolibre
+from scrapers import lacuracao
+
 
 from analizador import procesar_ofertas
 
@@ -302,29 +303,57 @@ except Exception as e:
         "❌ Falabella error:",
         e
     )
+# ==========================
+# LA CURACAO
+# ==========================
 
+print("\n🔎 Buscando La Curacao...")
 
-# MERCADO LIBRE
 
 try:
 
-    ml = mercadolibre.guardar()
+    productos_lacuracao = lacuracao.guardar()
+
 
     print(
-        "✔ Mercado Libre:",
-        len(ml)
+        "✔ La Curacao:",
+        len(productos_lacuracao)
     )
 
-    if ml:
 
-        ofertas.extend(ml)
+    if productos_lacuracao:
+
+        ofertas.extend(productos_lacuracao)
+        print("DEBUG LA CURACAO:")
+        for p in productos_lacuracao[:5]:
+            print(
+                p.get("titulo"),
+                "|",
+                p.get("tienda"),
+                "|",
+                p.get("precio")
+            )
 
 except Exception as e:
 
     print(
-        "❌ Mercado Libre error:",
+        "❌ La Curacao error:",
         e
     )
+
+
+# MERCADO LIBRE DESACTIVADO
+#
+# try:
+#
+#     m = mercadolibre.guardar()
+#
+#     if m:
+#         ofertas.extend(m)
+#
+# except Exception as e:
+#
+#     print(e)
 
 # ====================================
 # ELIMINAR DUPLICADOS (SEGURO)
