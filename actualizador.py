@@ -1,5 +1,7 @@
 from scrapers import falabella
 from scrapers import lacuracao
+from scrapers import oechsle
+from scrapers import plazavea
 
 
 from analizador import procesar_ofertas
@@ -341,6 +343,61 @@ except Exception as e:
         e
     )
 
+# ==========================
+# OECHSLE
+# ==========================
+
+print("\n🔎 Buscando Oechsle...")
+
+try:
+
+    productos_oechsle = oechsle.guardar()
+
+    print(
+        "✔ Oechsle:",
+        len(productos_oechsle)
+    )
+
+    if productos_oechsle:
+
+        ofertas.extend(productos_oechsle)
+
+except Exception as e:
+
+    print(
+        "❌ Oechsle error:",
+        e
+    )
+
+# ==========================
+# PLAZAVEA
+# ==========================
+
+print("\n🔎 Buscando PlazaVea...")
+
+
+try:
+
+    productos_plazavea = plazavea.guardar()
+
+
+    print(
+        "✔ PlazaVea:",
+        len(productos_plazavea)
+    )
+
+
+    if productos_plazavea:
+
+        ofertas.extend(productos_plazavea)
+
+
+except Exception as e:
+
+    print(
+        "❌ PlazaVea error:",
+        e
+    )
 
 # MERCADO LIBRE DESACTIVADO
 #
