@@ -55,3 +55,6 @@ def guardar():
     print("Ripley guardadas:", len(productos))
 
     return productos
+
+if __name__ == "__main__":
+    guardar()

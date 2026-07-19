@@ -2,6 +2,7 @@ from scrapers import falabella
 from scrapers import lacuracao
 from scrapers import oechsle
 from scrapers import plazavea
+from scrapers import tottus
 
 
 from analizador import procesar_ofertas
@@ -396,6 +397,36 @@ except Exception as e:
 
     print(
         "❌ PlazaVea error:",
+        e
+    )
+
+# ==========================
+# TOTTUS
+# ==========================
+
+print("\n🔎 Buscando Tottus...")
+
+
+try:
+
+    productos_tottus = tottus.guardar()
+
+
+    print(
+        "✔ Tottus:",
+        len(productos_tottus)
+    )
+
+
+    if productos_tottus:
+
+        ofertas.extend(productos_tottus)
+
+
+except Exception as e:
+
+    print(
+        "❌ Tottus error:",
         e
     )
 
