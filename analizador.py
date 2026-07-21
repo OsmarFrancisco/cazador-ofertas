@@ -59,6 +59,7 @@ def analizar_compra(producto):
         )
     )
     descuento = producto.get("descuento", 0)
+
     puntaje = producto.get("puntaje", 0)
 
     historial = producto.get("historial_precios", [])
@@ -375,6 +376,13 @@ def procesar_ofertas(ofertas, historial):
         puntaje = producto.get("puntaje", 0)
         precio = limpiar_precio(producto.get("precio",0))
         titulo = producto.get("titulo", "")
+        descuento_tienda = producto.get(
+            "descuento_tienda",
+            0
+        )
+
+
+
         precio_habitual = producto.get(
             "promedio_historico",
             producto.get(
@@ -418,12 +426,15 @@ def procesar_ofertas(ofertas, historial):
         if nivel_alerta:
 
             mensaje = f"""
-            🚨 POSIBLE ERROR DE PRECIO
+            {nivel_alerta}
 
             📱 {titulo}
 
             💰 Precio actual:
             S/ {precio}
+
+            🏷️ Descuento tienda:
+            {descuento_tienda}%
 
             📈 Máximo histórico:
             S/ {precio_habitual}

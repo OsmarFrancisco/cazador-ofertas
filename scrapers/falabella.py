@@ -94,6 +94,21 @@ def guardar():
                         if x.strip()
                     ]
 
+                    descuento_tienda = 0
+
+                    for parte in partes:
+                        if "%" in parte:
+
+                            try:
+                                descuento_tienda = abs(
+                                    int(
+                                        parte.replace("%","")
+                                             .replace("-","")
+                                    )
+                                )
+                            except:
+                                descuento_tienda = 0                 
+
 
                     productos.append({
 
@@ -106,6 +121,8 @@ def guardar():
                             ),
                             "Consultar"
                         ),
+
+                        "descuento_tienda": descuento_tienda,
 
                         "tienda": "Falabella Perú",
 
