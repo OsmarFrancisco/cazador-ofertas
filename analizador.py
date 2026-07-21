@@ -314,8 +314,8 @@ def procesar_ofertas(ofertas, historial):
 
         # ===================================== 
 
-        # CALCULAR DESCUENTO REAL CON KNASTA
-
+        # CALCULAR CAÍDA HISTÓRICA (KNASTA)
+ 
         # =====================================
 
         precio_actual = limpiar_precio(
@@ -326,20 +326,14 @@ def procesar_ofertas(ofertas, historial):
 
         precio_referencia = producto.get(
 
-            "promedio_historico",
+            "precio_maximo_knasta",
 
             producto.get(
 
-                "precio_maximo_knasta",
+                "precio_maximo",
 
-                producto.get(
-
-                    "precio_maximo",
-
-                    precio_actual
-
-                )
-
+                precio_actual
+            
             )
 
         )
@@ -347,7 +341,7 @@ def procesar_ofertas(ofertas, historial):
 
         if precio_referencia and precio_actual < precio_referencia:
 
-            descuento = round(
+            caida_historica = round(
                 (
                     (precio_referencia - precio_actual)
 
@@ -360,9 +354,9 @@ def procesar_ofertas(ofertas, historial):
 
         else:
 
-            descuento = 0
+            caida_historica = 0
 
-        producto["descuento"] = descuento
+        producto["caida_historica"] = caida_historica
 
         producto["puntaje"] = calcular_puntaje(producto)
 
@@ -398,19 +392,19 @@ def procesar_ofertas(ofertas, historial):
         # 🚨 DETECTOR DE OFERTAS REALES
         # =====================================
 
-        if descuento >= 90:
+        if caida_historica >= 90:
 
             nivel_alerta = "⚠️ ERROR EXTREMO"
 
-        elif descuento >= 70:
+        elif caida_historica >= 70:
 
             nivel_alerta = "🚨 POSIBLE ERROR DE PRECIO"
 
-        elif descuento >= 50:
+        elif caida_historica >= 60:
 
             nivel_alerta = "🔥 GANGA REAL"
 
-        elif descuento >= 30:
+        elif caida_historica >= 45:
 
             nivel_alerta = "🟢 BUENA OPORTUNIDAD"
 
@@ -424,22 +418,25 @@ def procesar_ofertas(ofertas, historial):
         if nivel_alerta:
 
             mensaje = f"""
-        {titulo}
+            🚨 POSIBLE ERROR DE PRECIO
 
-        {nivel_alerta}
+            📱 {titulo}
 
-        💰 Ahora:
-        S/ {precio}
+            💰 Precio actual:
+            S/ {precio}
 
-        💵 Habitual:
-        S/ {precio_habitual}
+            📈 Máximo histórico:
+            S/ {precio_habitual}
 
-        📉 Caída real:
-        {descuento}%
-           
-        🛒 Comprar: 
-        {link}
-        """
+            📉 Caída histórica:
+            {caida_historica}%
+
+            🚦 Nivel de alerta:
+            {nivel_alerta}
+                       
+            🛒 Comprar: 
+            {link}
+            """
 
             enviar_telegram(mensaje)
 
