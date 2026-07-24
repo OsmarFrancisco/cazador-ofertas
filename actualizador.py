@@ -3,6 +3,8 @@ from scrapers import lacuracao
 from scrapers import oechsle
 from scrapers import plazavea
 from scrapers import tottus
+from scrapers import promart
+from scrapers import coolbox
 
 
 from analizador import procesar_ofertas
@@ -430,6 +432,97 @@ except Exception as e:
         e
     )
 
+# ==========================
+# TOTTUS
+# ==========================
+
+print("\n🔎 Buscando Tottus...")
+
+
+try:
+
+    productos_tottus = tottus.guardar()
+
+
+    print(
+        "✔ Tottus:",
+        len(productos_tottus)
+    )
+
+
+    if productos_tottus:
+
+        ofertas.extend(productos_tottus)
+
+
+except Exception as e:
+
+    print(
+        "❌ Tottus error:",
+        e
+    )
+
+# ==========================
+# PROMART
+# ==========================
+
+print("\n🔎 Buscando Promart...")
+
+
+try:
+
+    productos_promart = promart.obtener_promart()
+
+
+    print(
+        "✔ Promart:",
+        len(productos_promart)
+    )
+
+
+    if productos_promart:
+
+        ofertas.extend(productos_promart)
+
+
+except Exception as e:
+
+    print(
+        "❌ Promart error:",
+        e
+    )
+
+
+# ==========================
+# COOLBOX
+# ==========================
+
+print("\n🔎 Buscando Coolbox...")
+
+
+try:
+
+    productos_coolbox = coolbox.guardar()
+
+
+    print(
+        "✔ Coolbox:",
+        len(productos_coolbox)
+    )
+
+
+    if productos_coolbox:
+
+        ofertas.extend(productos_coolbox)
+
+
+except Exception as e:
+
+    print(
+        "❌ Coolbox error:",
+        e
+    )
+    
 # MERCADO LIBRE DESACTIVADO
 #
 # try:
